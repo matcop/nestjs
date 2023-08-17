@@ -21,16 +21,14 @@ export const bulbsaur:Pokemon ={
     
 }
 
-export const picachu:Pokemon ={
+export const charmander:Pokemon ={
     id:21,
     name:'picachu',
     age:1
     
 }
 
-
-
-
-
-
 console.log(bulbsaur);
+
+export const pokemons:Pokemon[]=[];
+pokemons.push(bulbsaur,charmander)
