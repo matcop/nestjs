@@ -1,5 +1,6 @@
-// 1.- FORMA LARGA DE LA CLASE
+import axios from "axios";
 
+// 1.- FORMA LARGA DE LA CLASE
 // export class Pokemon{
 //     public id:number;
 //     public name:string;
@@ -36,12 +37,23 @@ export class Pokemon {
  speak(){
     console.log(`${this.name} ${this.name}`);
  }
+
+async getMoves(){
+    const resp =await axios.get('https://pokeapi.co/api/v2/pokemon/4');
+console.log(resp);
+    return resp;
+}
+
 }
 
 
 export const charmander = new Pokemon(5, 'charmanderx')
 
-console.log(charmander.imageUrl);
+// console.log(charmander.imageUrl);
 
-charmander.scream();
-charmander.speak();
+// charmander.scream();
+// charmander.speak();
+
+
+// console.log(charmander.getMoves());
+charmander.getMoves();
