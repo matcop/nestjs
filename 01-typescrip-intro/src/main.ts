@@ -16,7 +16,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <a href="https://www.typescriptlang.org/" target="_blank">
       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
     </a>
-    <h1>Vite + TypeScript +${charmander.name}</h1>
+    <h1>Vite + TypeScript +${charmander.name} ${charmander.id}</h1>
     
 
     <div class="card">
