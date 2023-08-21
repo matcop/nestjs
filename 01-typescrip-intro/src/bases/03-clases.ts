@@ -1,4 +1,5 @@
 import axios from "axios";
+import { PokeapiResponse } from "./interfaces/pokeapi-response.interface";
 
 // 1.- FORMA LARGA DE LA CLASE
 // export class Pokemon{
@@ -39,9 +40,11 @@ export class Pokemon {
  }
 
 async getMoves(){
-    const resp =await axios.get('https://pokeapi.co/api/v2/pokemon/4');
-console.log(resp);
-    return resp;
+    // const resp =await axios.get('https://pokeapi.co/api/v2/pokemon/4');
+    //ejem.. abajo desestructuracion.
+    const {data} =await axios.get<PokeapiResponse>('https://pokeapi.co/api/v2/pokemon/4');
+console.log(data.moves[0].move.name);
+    return data.moves;
 }
 
 }
