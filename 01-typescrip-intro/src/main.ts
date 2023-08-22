@@ -3,8 +3,8 @@ import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
 import'./bases/01-types.ts';
- import { charmander } from './bases/05-decorators.ts';
-
+ import { charmander } from './bases/06-decorators.ts';
+//  import { charmander } from './bases/05-decorators.ts';
 // import { charmander } from './bases/04-injections.ts';
 // import { charmander } from './bases/03-clases.ts';
 //import { charmander } from './bases/02-objects.ts';
