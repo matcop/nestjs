@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpStatus, Param, ParseIntPipe, Patch, Post, Res } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpStatus, Param, ParseUUIDPipe, Patch, Post, Res } from '@nestjs/common';
 import { CarsService } from './cars.service';
 
 @Controller('cars')
@@ -15,8 +15,8 @@ export class CarsController {
   }
 
   @Get(':id')
-  getCarById(@Param('id', ParseIntPipe) id: number) {
-    console.log(this.carsService.findOneById(+id));
+  getCarById(@Param('id', ParseUUIDPipe) id: string) {
+    console.log(this.carsService.findOneById(id));
 
 
 
@@ -24,7 +24,7 @@ export class CarsController {
 
     // throw new Error ('error monitoreo79537750')
 
-    return this.carsService.findOneById(+id);
+    return this.carsService.findOneById(id);
 
   }
 
@@ -35,13 +35,13 @@ export class CarsController {
 
   @Patch(':id')
   UpdateCar( 
-    @Param('id', ParseIntPipe) id:number,
+    @Param('id', ParseUUIDPipe) id:string,
     @Body() body: any) {
     return body;
   }
 
   @Delete(':id')
-  DeleteCar(@Param('id',ParseIntPipe)id:number) {
+  DeleteCar(@Param('id',ParseUUIDPipe)id:string) {
     return {
       method:'delete',
       id:id
