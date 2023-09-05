@@ -80,11 +80,11 @@ export class PersonasService {
   }
 
   findOne(ci: string) {
-    const persona=this.personas.find(persona =>persona.NumeroDocumento===ci);
+    const persona = this.personas.find(persona => persona.NumeroDocumento === ci);
     if (!persona) throw new NotFoundException(`la persona con ci "${ci}" no fue encontrada`);
-    
+
     return persona;
-    
+
   }
 
   update(id: number, updatePersonaDto: UpdatePersonaDto) {
@@ -93,5 +93,9 @@ export class PersonasService {
 
   remove(id: number) {
     return `This action removes a #${id} persona`;
+  }
+
+  fillPersonaWithSeedData(personas: Persona[]) {
+    this.personas = personas;
   }
 }

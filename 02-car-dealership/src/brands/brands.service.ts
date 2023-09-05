@@ -60,4 +60,9 @@ export class BrandsService {
     this.brands=this.brands.filter(brand=>brand.id !==id)
     return `se ha borrado la marca con id ${id}`;
   }
+
+  fillBrandWithSeedData(brands:Brand[]){
+    this.brands=brands;
+}
+
 }
